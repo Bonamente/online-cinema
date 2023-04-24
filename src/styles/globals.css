@@ -55,8 +55,8 @@ body {
   }
 
   .subscription-tile-title {
-    @apply text-[15px] font-bold;
-  }
+    @apply text-[15px] font-bold
+  } 
 
   .profile-tile {
     @apply flex flex-col justify-between min-h-[108px] p-[15px] rounded-lg bg-[#312b45] hover:bg-[#3e3758] transition-all duration-300;
@@ -133,6 +133,7 @@ body {
   width: 20px;
   height: 20px;
 }
+
 .loader {
   font-size: 10px;
   position: absolute;
@@ -147,6 +148,7 @@ body {
   -webkit-animation: load8 0.5s infinite linear;
   animation: load8 0.5s infinite linear;
 }
+
 @-webkit-keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -157,6 +159,7 @@ body {
     transform: rotate(360deg);
   }
 }
+
 @keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -170,4 +173,20 @@ body {
 
 .swiper-button-disabled {
   display: none;
+}
+
+.mobile-nav-link {
+  @apply text-[15px] font-bold text-white hover:opacity-[.72] focus:opacity-[.72] active:opacity-100 transition-all duration-300 outline-none;
+}
+
+.subscription-gallery-link {
+  box-shadow: 0 2px 0 #7e798f, inset 0 0 0 #7e798f;
+}
+
+.subscription-gallery-link:hover {
+  box-shadow: 0 0 0 #7e798a, inset 0 -1.5em 0 #7e798a;
+}
+
+.subscription-gallery-link:active {
+  box-shadow: 0 0 0 #6d687c, inset 0 -1.5em 0 #6d687c;
 }

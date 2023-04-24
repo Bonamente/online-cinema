@@ -17,7 +17,7 @@ const FooterTab: React.FC<FooterTabProps> = ({
       {...attributes}
     >
       <div
-        className={`absolute top-0 left-[50%] -translate-x-[50%] w-16 h-12  bg-[url("/tabBarGlow.svg")] bg-auto ${opacity}`}
+        className={`absolute top-0 left-[50%] -translate-x-[50%] w-16 h-12  bg-[url("/icons/tabBarGlow.svg")] bg-auto ${opacity}`}
       ></div>
       {children}
     </button>

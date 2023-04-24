@@ -18,10 +18,10 @@ const FooterButton: React.FC<FooterButtonProps> = ({
       sizeStyle = `w-10 h-10`;
       break;
     case 'middle':
-      sizeStyle = `h-10 py-[9px] px-[15px] leading-[18px]`;
+      sizeStyle = `w-full h-10 py-[9px] px-[15px] leading-[18px]`;
       break;
     case 'large':
-      sizeStyle = `justify-start h-12 leading-5`;
+      sizeStyle = `justify-start h-12 w-full leading-5`;
       break;
     default:
       sizeStyle = '';

@@ -1,9 +1,10 @@
 export type LinkType = {
-  text: string;
   path: string;
+  text?: string;
   title?: string;
   isExternal: boolean;
   hasGradient?: boolean;
+  imgUrl?: string;
 };
 
 export type LinksListProps = {

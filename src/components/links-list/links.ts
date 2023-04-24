@@ -39,7 +39,7 @@ export const navLinks: LinkType[] = [
   },
 ];
 
-// TODO конкретные endpoints уточнить у бекенда
+// TODO конкретные endpoints уточнить у бэкенда
 export const movieGenresLinks: LinkType[] = [
   {
     text: 'Артхаус',
@@ -792,6 +792,108 @@ export const tvLinks: LinkType[] = [
   },
 ];
 
+export const tvChannelLinks: LinkType[] = [
+  {
+    text: '1tv',
+    path: 'https://www.ivi.ru/tvchannels/watch/1tv',
+    imgUrl: '/images/channels/channel1.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'russia1',
+    path: 'https://www.ivi.ru/tvchannels/watch/russia1',
+    imgUrl: '/images/channels/russia1.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'match-tv',
+    path: 'https://www.ivi.ru/tvchannels/watch/match-tv',
+    imgUrl: '/images/channels/match-tv.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'ntv',
+    path: 'https://www.ivi.ru/tvchannels/watch/ntv',
+    imgUrl: '/images/channels/ntv.jpeg',
+    isExternal: true,
+  },
+  {
+    text: '5tv',
+    path: 'https://www.ivi.ru/tvchannels/watch/5tv',
+    imgUrl: '/images/channels/5tv.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'kultura',
+    path: 'https://www.ivi.ru/tvchannels/watch/russia-k',
+    imgUrl: '/images/channels/kultura.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'russia24',
+    path: 'https://www.ivi.ru/tvchannels/watch/russia24',
+    imgUrl: '/images/channels/russia24.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'karusel',
+    path: 'https://www.ivi.ru/tvchannels/watch/karusel',
+    imgUrl: '/images/channels/carousel.jpeg',
+    isExternal: true,
+  },
+];
+
+export const tvSportLinks: LinkType[] = [
+  {
+    text: 'match premier',
+    path: 'https://www.ivi.ru/tvchannels/watch/match-premer',
+    imgUrl: '/images/channels/match-premier.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'match football-1',
+    path: 'https://www.ivi.ru/tvchannels/watch/futbol-1',
+    imgUrl: '/images/channels/match-football-1.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'match football-2',
+    path: 'https://www.ivi.ru/tvchannels/watch/futbol-2',
+    imgUrl: '/images/channels/match-football-2.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'match football-3',
+    path: 'https://www.ivi.ru/tvchannels/watch/futbol-3',
+    imgUrl: '/images/channels/match-football-3.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'boec',
+    path: 'https://www.ivi.ru/tvchannels/watch/match-boec',
+    imgUrl: '/images/channels/fighter.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'khl prime',
+    path: 'https://www.ivi.ru/tvchannels/watch/khl-tv-hd',
+    imgUrl: '/images/channels/khl-prime.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'start live',
+    path: 'https://www.ivi.ru/tvchannels/watch/start',
+    imgUrl: '/images/channels/start-live.jpeg',
+    isExternal: true,
+  },
+  {
+    text: 'khl',
+    path: 'https://www.ivi.ru/tvchannels/watch/khl-tv',
+    imgUrl: '/images/channels/khl.jpeg',
+    isExternal: true,
+  },
+];
+
 export const footerAboutLinks: LinkType[] = [
   {
     text: 'О компании',
@@ -876,5 +978,44 @@ export const footerSectionsLinks: LinkType[] = [
     path: 'https://www.ivi.ru/cert',
     isExternal: true,
     hasGradient: true,
+  },
+];
+
+export const socialsLinks: LinkType[] = [
+  {
+    text: 'VK',
+    path: 'https://vk.com/iviru?crc=fa4448c13e06e69ba9e814e8743c7e2e',
+    imgUrl: '/icons/vkontakte-logo.svg',
+    isExternal: true,
+  },
+  {
+    text: 'OK',
+    path: 'https://ok.ru/ivi.ru',
+    imgUrl: '/icons/odnoklassniki-logo.svg',
+    isExternal: true,
+  },
+  {
+    text: 'Twitter',
+    path: 'https://twitter.com/ivi_ru',
+    imgUrl: '/icons/twitter-logo.svg',
+    isExternal: true,
+  },
+  {
+    text: 'Viber',
+    path: 'https://vb.me/a0544c',
+    imgUrl: '/icons/viber-logo.svg',
+    isExternal: true,
+  },
+  {
+    text: 'LinkedIn',
+    path: 'https://www.linkedin.com/company/2543415/',
+    imgUrl: '/icons/linkedin-logo.svg',
+    isExternal: true,
+  },
+  {
+    text: 'Telegram',
+    path: 'https://t.me/official_iviru',
+    imgUrl: '/icons/telegram-logo.svg',
+    isExternal: true,
   },
 ];

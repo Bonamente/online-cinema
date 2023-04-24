@@ -21,11 +21,7 @@ import DropdownTvContent from '../dropdown-tv-content/DropdownTvContent';
 import DropdownSubscriptionContent from '../dropdown-subscription-content/DropdownSubscriptionContent';
 import DropdownNotificationContent from '../dropdown-notification-content/DropdownNotificationContent';
 import DropdownProfileContent from '../dropdown-profile-content/DropdownProfileContent';
-
-export type HeaderDropdownProps = {
-  linkType: string;
-  handleHovering: (arg: string) => void;
-};
+import { HeaderDropdownProps } from './types';
 
 const HeaderDropdown: React.FC<HeaderDropdownProps> = ({
   linkType,

@@ -9,7 +9,13 @@ const Logo = () => {
         href='/'
         title='Онлайн-кинотеатр Иви'
       >
-        <Image src='/ivi-logo.svg' priority alt='logo' width={66} height={48} />
+        <Image
+          src='/icons/ivi-logo.svg'
+          priority
+          alt='logo'
+          width={66}
+          height={48}
+        />
       </Link>
     </div>
   );

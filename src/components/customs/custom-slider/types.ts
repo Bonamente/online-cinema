@@ -8,6 +8,8 @@ export interface SwiperComponentProps {
   slidesPerView: SlidesPerViewType;
 }
 
+<<<<<<< HEAD
+=======
 export interface CustomSliderProps {
   title?: string;
   id: string | number;
@@ -18,6 +20,7 @@ export interface CustomSliderProps {
   buttonsPosition: ButtonsPositionType;
 }
 
+>>>>>>> develop
 export type SizeType = 'small' | 'default';
 export type ButtonsPositionType = 'inside' | 'outside';
 export type SlidesPerViewType = number | 'auto';

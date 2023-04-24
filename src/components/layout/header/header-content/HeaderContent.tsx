@@ -1,41 +1,18 @@
-import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useMediaQuery } from 'react-responsive';
 
+import Navigation from '../navigation/Navigation';
 import HeaderDropdown from '../header-dropdown/HeaderDropdown';
-import SubscriptionBtn from '../subscription-button/SubscriptionBtn';
 import LangSwitcher from '../lang-switcher/LangSwitcher';
-const DynamicSearchBtn = dynamic(() => import('../search-button/SearchBtn'), {
-  ssr: false,
-});
-
-const DynamicNavigation = dynamic(() => import('../navigation/Navigation'), {
-  ssr: false,
-});
-
-const DynamicNotificationBtn = dynamic(
-  () => import('../notification-button/NotificationBtn'),
-  {
-    ssr: false,
-  }
-);
-
-const DynamicProfileBtn = dynamic(
-  () => import('../profile-button/ProfileBtn'),
-  {
-    ssr: false,
-  }
-);
+import SearchBtn from '../search-button/SearchBtn';
+import SubscriptionBtn from '../subscription-button/SubscriptionBtn';
+import NotificationBtn from '../notification-button/NotificationBtn';
+import ProfileBtn from '../profile-button/ProfileBtn';
 
 const HeaderContent = () => {
-  const isLargeScreen = useMediaQuery({
-    query: '(min-width: 1160px)',
-  });
-
-  const isMobileScreen = useMediaQuery({
-    query: '(max-width: 600px)',
-  });
+  const isLargeScreen = useMediaQuery({ query: '(min-width: 1160px)' });
+  const isMobileScreen = useMediaQuery({ query: '(max-width: 600px)' });
 
   const router = useRouter();
   const isHomePage = router.pathname === '/';
@@ -51,16 +28,13 @@ const HeaderContent = () => {
   };
 
   return (
-    <div className='relative z-20 page-header-container flex items-stretch h-[72px] px-3'>
+    <div className='relative z-50 page-header-container flex items-stretch h-[72px] px-3'>
       <div className='flex items-stretch justify-between w-full'>
         {!isHomePage ? (
           <div className='absolute top-[71px] left-3 right-3 w-[98%] h-[1px] bg-white/[.16]'></div>
         ) : null}
 
-        <DynamicNavigation
-          handleHovering={handleHovering}
-          handleClick={handleClick}
-        />
+        <Navigation handleHovering={handleHovering} handleClick={handleClick} />
 
         <div className='flex [&>*]:ml-4'>
           <div
@@ -77,10 +51,10 @@ const HeaderContent = () => {
             )}
           </div>
 
-          {isLargeScreen ? <DynamicSearchBtn /> : null}
+          {isLargeScreen ? <SearchBtn /> : null}
 
           {isMobileScreen ? null : (
-            <DynamicNotificationBtn
+            <NotificationBtn
               handleHovering={handleHovering}
               handleClick={handleClick}
             />
@@ -89,7 +63,7 @@ const HeaderContent = () => {
           <LangSwitcher />
 
           {isMobileScreen ? null : (
-            <DynamicProfileBtn
+            <ProfileBtn
               handleHovering={handleHovering}
               handleClick={handleClick}
             />

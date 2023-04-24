@@ -7,7 +7,7 @@ const LinksList: React.FC<LinksListProps> = ({ direction, links }) => {
       <ul
         className={`flex m-0 p-0 ${
           direction === 'column' ? 'flex-col' : 'items-stretch'
-        } ${direction === 'column' ? `[&>*:not(:first-child)]:mt-2` : ''}`}
+        } ${direction === 'column' ? `[&>*:not(:first-child)]:mt-1` : ''}`}
       >
         {links.map((link) => {
           const linkStyle = `header-link ${

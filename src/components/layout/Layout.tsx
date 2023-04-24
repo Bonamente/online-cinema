@@ -1,7 +1,10 @@
 import dynamic from 'next/dynamic';
 import { useMediaQuery } from 'react-responsive';
 import Meta, { MetaProps } from '../seo/Meta';
-import Header from './header/Header';
+
+const DynamicHeader = dynamic(() => import('./header/Header'), {
+  ssr: false,
+});
 
 const DynamicFooter = dynamic(() => import('./footer/Footer'), {
   ssr: false,
@@ -18,9 +21,9 @@ const Layout: React.FC<MetaProps> = ({ title, description, children }) => {
 
   return (
     <Meta title={title} description={description}>
-      <div className='h-screen grid grid-rows-layout grid-cols-1'>
-        <Header />
-        <main className='relative'>{children}</main>
+      <div className='relative h-screen grid grid-rows-layout grid-cols-1'>
+        <DynamicHeader />
+        <main>{children}</main>
         {isLargeScreen ? <DynamicFooter /> : <DynamicMobileFooter />}
       </div>
     </Meta>

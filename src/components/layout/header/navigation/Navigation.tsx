@@ -1,19 +1,13 @@
 import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
 import Logo from '../logo/Logo';
-
-type NavigationProps = {
-  handleHovering: (arg: string) => void;
-  handleClick: () => void;
-};
+import { NavigationProps } from './types';
 
 const Navigation: React.FC<NavigationProps> = ({
   handleHovering,
   handleClick,
 }) => {
-  const isLargeScreen = useMediaQuery({
-    query: '(min-width: 1160px)',
-  });
+  const isLargeScreen = useMediaQuery({ query: '(min-width: 1160px)' });
 
   return (
     <nav className='flex h-full items-center'>
