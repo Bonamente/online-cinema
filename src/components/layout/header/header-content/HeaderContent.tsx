@@ -11,6 +11,7 @@ import NotificationBtn from '../notification-button/NotificationBtn';
 import ProfileBtn from '../profile-button/ProfileBtn';
 
 const HeaderContent = () => {
+  const hasExtraMargins = useMediaQuery({ minWidth: 600, maxWidth: 1279 });
   const isLargeScreen = useMediaQuery({ query: '(min-width: 1160px)' });
   const isMobileScreen = useMediaQuery({ query: '(max-width: 600px)' });
 
@@ -28,7 +29,11 @@ const HeaderContent = () => {
   };
 
   return (
-    <div className='relative z-50 page-header-container flex items-stretch h-[72px] px-3'>
+    <div
+      className={`relative z-50 page-header-container flex items-stretch h-[72px] px-3 ${
+        hasExtraMargins ? 'mx-5' : ''
+      }`}
+    >
       <div className='flex items-stretch justify-between w-full'>
         {!isHomePage ? (
           <div className='absolute top-[71px] left-3 right-3 w-[98%] h-[1px] bg-white/[.16]'></div>
@@ -38,9 +43,7 @@ const HeaderContent = () => {
 
         <div className='flex [&>*]:ml-4'>
           <div
-            onMouseOver={
-              isLargeScreen ? () => handleHovering('subscription') : undefined
-            }
+            onMouseOver={isLargeScreen ? () => handleHovering('subscription') : undefined}
             onMouseOut={isLargeScreen ? () => handleHovering('') : undefined}
             onClick={handleClick}
           >
@@ -54,19 +57,13 @@ const HeaderContent = () => {
           {isLargeScreen ? <SearchBtn /> : null}
 
           {isMobileScreen ? null : (
-            <NotificationBtn
-              handleHovering={handleHovering}
-              handleClick={handleClick}
-            />
+            <NotificationBtn handleHovering={handleHovering} handleClick={handleClick} />
           )}
 
           <LangSwitcher />
 
           {isMobileScreen ? null : (
-            <ProfileBtn
-              handleHovering={handleHovering}
-              handleClick={handleClick}
-            />
+            <ProfileBtn handleHovering={handleHovering} handleClick={handleClick} />
           )}
         </div>
 
@@ -78,10 +75,7 @@ const HeaderContent = () => {
         ) : null}
 
         {isLargeScreen && currentHoveringLink === 'animation' ? (
-          <HeaderDropdown
-            linkType='animation'
-            handleHovering={handleHovering}
-          />
+          <HeaderDropdown linkType='animation' handleHovering={handleHovering} />
         ) : null}
 
         {isLargeScreen && currentHoveringLink === 'tv' ? (
@@ -89,19 +83,11 @@ const HeaderContent = () => {
         ) : null}
 
         {isLargeScreen && currentHoveringLink === 'notification' ? (
-          <HeaderDropdown
-            linkType='notification'
-            handleHovering={handleHovering}
-          />
+          <HeaderDropdown linkType='notification' handleHovering={handleHovering} />
         ) : null}
 
-        {isLargeScreen &&
-        !isHomePage &&
-        currentHoveringLink === 'subscription' ? (
-          <HeaderDropdown
-            linkType='subscription'
-            handleHovering={handleHovering}
-          />
+        {isLargeScreen && !isHomePage && currentHoveringLink === 'subscription' ? (
+          <HeaderDropdown linkType='subscription' handleHovering={handleHovering} />
         ) : null}
 
         {isLargeScreen && currentHoveringLink === 'profile' ? (
