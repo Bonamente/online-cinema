@@ -9,6 +9,7 @@ const PromoSlider = () => {
   const router = useRouter();
   const isMobile = useMediaQuery({ query: '(max-width: 599px)' });
   const isSmallScreen = useMediaQuery({ minWidth: 600, maxWidth: 1279 });
+  const hasTouchMove = isSmallScreen || isMobile;
 
   const handleBtnClick = () => {
     router.push('/movies');
@@ -20,12 +21,12 @@ const PromoSlider = () => {
 
   switch (true) {
     case isSmallScreen:
-      containerWidth = 'w-full -ml-2 pl-6 pr-6';
+      containerWidth = 'w-full px-6';
       description = 'pb-[10px]';
       slideTitle = 'mb-5 text-[28px] leading-[32px]';
       break;
     case isMobile:
-      containerWidth = 'w-full -ml-2 pl-4 pr-0';
+      containerWidth = 'w-full px-2';
       description = 'pb-[20px]';
       slideTitle = 'mb-0 text-[28px] leading-[32px]';
       break;
@@ -35,19 +36,19 @@ const PromoSlider = () => {
       slideTitle = 'mb-10 text-[56px] leading-[56px]';
   }
 
-  const slideNum = isSmallScreen || isMobile ? 1 : 'auto';
+  const slidesNum = isSmallScreen || isMobile ? 1 : 'auto';
 
   return (
-    <div className={`flex ${containerWidth}`}>
+    <div className={`${containerWidth}`}>
       <div className='mx-auto'>
         <div>
           <CustomSlider
             id='promo-slider'
-            slidesPerView={slideNum}
+            slidesPerView={slidesNum}
             buttonsPosition={isSmallScreen ? 'promo-small' : 'promo-large'}
             spaceBetween={16}
             initialSlide={1}
-            allowTouchMove={isMobile}
+            allowTouchMove={hasTouchMove}
             hasButtons={!isMobile}
             hasShadow
             centeredSlides
@@ -55,7 +56,7 @@ const PromoSlider = () => {
           >
             {promoSlides.map((slide) => {
               return (
-                <div className='relative' key={slide.imgUrl}>
+                <div className='relative max-w-[1216px]' key={slide.imgUrl}>
                   <Image
                     width='0'
                     height='0'
