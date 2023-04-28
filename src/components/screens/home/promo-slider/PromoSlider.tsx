@@ -21,12 +21,12 @@ const PromoSlider = () => {
 
   switch (true) {
     case isSmallScreen:
-      containerWidth = 'w-full px-6';
+      containerWidth = 'w-full px-9';
       description = 'pb-[10px]';
       slideTitle = 'mb-5 text-[28px] leading-[32px]';
       break;
     case isMobile:
-      containerWidth = 'w-full px-2';
+      containerWidth = 'w-full px-9';
       description = 'pb-[20px]';
       slideTitle = 'mb-0 text-[28px] leading-[32px]';
       break;
