@@ -49,6 +49,8 @@ const WeekTopSlider = () => {
         <CustomSlider
           id='week-top'
           slidesPerView={slidesNum}
+          slidesPerGroup={4}
+          speed={1000}
           spaceBetween={slidesSpaceBetween}
           allowTouchMove={hasTouchMove}
           buttonsPosition={isMobile ? 'inside' : 'outside'}
