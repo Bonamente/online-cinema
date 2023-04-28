@@ -50,6 +50,7 @@ const PromoSlider = () => {
             initialSlide={1}
             allowTouchMove={hasTouchMove}
             hasButtons={!isMobile}
+            speed={isMobile ? undefined : 1000}
             hasShadow
             centeredSlides
             loop
@@ -64,6 +65,7 @@ const PromoSlider = () => {
                     className={`${isMobile ? 'w-[550px]' : 'w-[1216px]'} h-auto rounded-3xl`}
                     src={isMobile ? slide.smImgUrl : slide.imgUrl}
                     alt='promo'
+                    priority
                   />
                   <Link
                     className='absolute top-0 left-0 right-0 bottom-0 flex flex-col p-8'
