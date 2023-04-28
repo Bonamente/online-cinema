@@ -8,10 +8,11 @@ import Socials from '../../../layout/footer/socials/Socials';
 import Copyright from '../../../layout/footer/copyright/Copyright';
 import { socialsLinks } from '../../../links-list/links';
 import { TvIcon } from '@heroicons/react/24/outline';
+import Section from '@/components/layout/section-extended/SectionExtended';
 
 const MobileNavigationContent = () => {
   return (
-    <div className='drawer'>
+    <Section>
       <div className='px-4 pb-8 text-white'>
         <MobileNavTopButtonsGroup />
         <NestedNavigation />
@@ -32,7 +33,7 @@ const MobileNavigationContent = () => {
           <Copyright />
         </div>
       </div>
-    </div>
+    </Section>
   );
 };
 
