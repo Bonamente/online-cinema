@@ -1,17 +1,19 @@
 import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
 import { SocialsProps } from './types';
 
 const Socials: React.FC<SocialsProps> = ({ links }) => {
+  const isSmallMobile = useMediaQuery({ query: '(max-width: 380px)' });
+
   return (
-    <ul className='flex items-center [&>*:not(:first-child)]:ml-3'>
+    <ul
+      className={`flex ${isSmallMobile ? 'justify-center' : ''} items-center ${
+        isSmallMobile ? '[&>*:not(:first-child)]:ml-1' : '[&>*:not(:first-child)]:ml-3'
+      }`}
+    >
       {links.map((link) => (
         <li key={link.text}>
-          <a
-            className='footer-social'
-            href={link.path}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <a className='footer-social' href={link.path} target='_blank' rel='noopener noreferrer'>
             <span className='sr-only'>{link.text}</span>
             <Image
               className='footer-social-img'
