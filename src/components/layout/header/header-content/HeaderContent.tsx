@@ -12,6 +12,7 @@ import ProfileBtn from '../profile-button/ProfileBtn';
 
 const HeaderContent = () => {
   const hasExtraMargins = useMediaQuery({ minWidth: 600, maxWidth: 1279 });
+  const hasNoDropdown = useMediaQuery({ query: '(max-width: 1159px)' });
   const isLargeScreen = useMediaQuery({ query: '(min-width: 1160px)' });
   const isMobileScreen = useMediaQuery({ query: '(max-width: 600px)' });
 
@@ -30,13 +31,19 @@ const HeaderContent = () => {
 
   return (
     <div
-      className={`relative z-50 page-header-container flex items-stretch h-[72px] px-3 ${
-        hasExtraMargins ? 'mx-5' : ''
-      }`}
+      className={`relative z-50 page-header-container flex items-stretch h-[72px] ${
+        isMobileScreen ? 'px-10' : 'px-4'
+      }   ${hasExtraMargins ? 'mx-5' : ''}`}
     >
-      <div className='flex items-stretch justify-between w-full'>
+      <div
+        className={`${hasNoDropdown ? 'relative' : ''} flex items-stretch justify-between w-full`}
+      >
         {!isHomePage ? (
-          <div className='absolute top-[71px] left-3 right-3 w-[98%] h-[1px] bg-white/[.16]'></div>
+          <div
+            className={`absolute top-[71px] ${
+              hasNoDropdown ? 'left-0 right-0 w-full' : 'left-3 right-3 w-[98%]'
+            } h-[1px] bg-white/[.16]`}
+          ></div>
         ) : null}
 
         <Navigation handleHovering={handleHovering} handleClick={handleClick} />
