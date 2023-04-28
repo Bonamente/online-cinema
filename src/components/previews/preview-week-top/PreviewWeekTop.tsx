@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useMediaQuery } from 'react-responsive';
 import { PreviewWeekTopProps } from './types';
 
 const PreviewWeekTop: React.FC<PreviewWeekTopProps> = ({
@@ -9,8 +10,12 @@ const PreviewWeekTop: React.FC<PreviewWeekTopProps> = ({
   ratingNum,
   ratingNum2,
 }) => {
+  const isSmallScreen = useMediaQuery({ query: '(max-width: 740px)' });
+  const numberWidth = isSmallScreen ? '32' : '48';
+  const numberHeight = isSmallScreen ? '44' : '66';
+
   return (
-    <div className='group/slide hover:scale-[1.05] transition-transform duration-300 cursor-pointer'>
+    <div className='hover:scale-[1.05] transition-transform duration-300 cursor-pointer'>
       <Link className='relative max-w-[224px]' href={link}>
         <Image
           width='0'
@@ -27,9 +32,25 @@ const PreviewWeekTop: React.FC<PreviewWeekTopProps> = ({
           <h3 className='text-[24px] leading-5 text-white font-bold'>{title}</h3>
         </div>
 
-        <div className='absolute bottom-[5px] left-[50%] flex h-[66px] translate-x-[-50%]'>
-          {ratingNum2 ? <Image width='32' height='44' src={ratingNum2} alt='' /> : null}
-          <Image width='32' height='44' src={ratingNum} alt='' />
+        <div
+          className={`absolute bottom-[5px] left-[50%] flex h-[${numberHeight}px] translate-x-[-50%]`}
+        >
+          {ratingNum2 ? (
+            <Image
+              width={numberWidth}
+              height={numberHeight}
+              style={{ width: `${numberWidth}`, height: `${numberHeight}` }}
+              src={ratingNum2}
+              alt=''
+            />
+          ) : null}
+          <Image
+            width={numberWidth}
+            height={numberHeight}
+            style={{ width: `${numberWidth}`, height: `${numberHeight}` }}
+            src={ratingNum}
+            alt=''
+          />
         </div>
       </Link>
     </div>
