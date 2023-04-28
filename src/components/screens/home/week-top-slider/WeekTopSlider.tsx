@@ -1,10 +1,14 @@
 import { Fragment } from 'react';
-import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { useMediaQuery } from 'react-responsive';
 
 import CustomSlider from '@/components/customs/custom-slider-extended/CustomSliderExtended';
 import PreviewWeekTop from '@/components/previews/preview-week-top/PreviewWeekTop';
-import { weekTopSlides } from './weekTopSlides';
+const DynamicTitle = dynamic(() => import('./week-top-slider-title/WeekTopSliderTitle'), {
+  ssr: false,
+});
+
+import { weekTopSlides } from './weekTopSlides'; // refactor to get data with props (SSG)
 
 const WeekTopSlider = () => {
   const isSmallScreen = useMediaQuery({ minWidth: 879, maxWidth: 1159 });
@@ -35,15 +39,7 @@ const WeekTopSlider = () => {
 
   return (
     <div>
-      <h2 className='flex items-bottom'>
-        <Image width='116' height='28' src='/images/week-top/top10.svg' alt='Топ 10 за неделю' />
-        {isMobile ? null : (
-          <span className='block ml-2 text-white text-[24px] leading-7 font-bold'>
-            <span className='sr-only'>Топ 10</span>
-            за неделю
-          </span>
-        )}
-      </h2>
+      <DynamicTitle />
 
       <div className='py-6'>
         <CustomSlider
