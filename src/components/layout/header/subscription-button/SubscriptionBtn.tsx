@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 export type SubscriptionBtnProps = {
   text: string;
@@ -6,6 +7,7 @@ export type SubscriptionBtnProps = {
 };
 
 const SubscriptionBtn: React.FC<SubscriptionBtnProps> = ({ text, bgColor }) => {
+  const isXSmallMobile = useMediaQuery({ query: '(max-width: 365px)' });
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -28,7 +30,9 @@ const SubscriptionBtn: React.FC<SubscriptionBtnProps> = ({ text, bgColor }) => {
   return (
     <div className='flex h-full items-center'>
       <button
-        className={`${`relative h-8 py-[7px] px-[11px] text-[13px] font-bold rounded-lg cursor-pointer ${currentBg}`}`}
+        className={`${`relative h-8 py-[7px] ${
+          isXSmallMobile ? 'px-[2px] text-[10px]' : 'px-[11px] text-[13px]'
+        } font-bold rounded-lg cursor-pointer ${currentBg}`}`}
         onClick={() => setIsActive(true)}
       >
         {text}
