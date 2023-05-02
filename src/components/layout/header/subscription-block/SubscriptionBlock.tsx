@@ -6,7 +6,7 @@ const SubscriptionBlock = () => {
     <div className='flex flex-col h-[334px] w-[244px]'>
       <DropdownGallery />
       <a
-        className='flex justify-center items-center mt-auto  text-[15px] font-bold rounded-lg py-[9px] px-[15px]  bg-[#312b45] hover:bg-[#3a3352] transition-all duration-300 outline-none'
+        className='flex justify-center items-center mt-auto text-[15px] text-white font-bold rounded-lg py-[9px] px-[15px]  bg-[#312b45] hover:bg-[#3a3352] transition-all duration-300 outline-none'
         href='https://www.ivi.ru/tvplus/tv-schedule-today'
         target='_blank'
         rel='noopener noreferrer'
