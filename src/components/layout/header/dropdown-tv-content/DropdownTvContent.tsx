@@ -22,7 +22,7 @@ const DropdownTvContent: React.FC<DropdownTvContentProps> = ({
 
           <div className='my-6'>
             <a
-              className='flex justify-center text-[15px] font-bold rounded-lg py-[9px] px-[15px]  bg-[#312b45] hover:bg-[#3a3352]'
+              className='flex justify-center text-[15px] text-white font-bold rounded-lg py-[9px] px-[15px]  bg-[#312b45] hover:bg-[#3a3352]'
               href='https://www.ivi.ru/tvplus/tv-schedule-today'
               target='_blank'
               rel='noopener noreferrer'
@@ -50,7 +50,7 @@ const DropdownTvContent: React.FC<DropdownTvContentProps> = ({
             </div>
 
             <a
-              className='flex justify-center text-[15px] font-bold rounded-lg py-[9px] px-[15px]  bg-[#312b45] hover:bg-[#3a3352] duration-300'
+              className='flex justify-center text-[15px] text-white font-bold rounded-lg py-[9px] px-[15px]  bg-[#312b45] hover:bg-[#3a3352] duration-300'
               href='https://www.ivi.ru/tvplus/tv-schedule-today'
               target='_blank'
               rel='noopener noreferrer'
