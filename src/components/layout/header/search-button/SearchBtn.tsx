@@ -1,9 +1,15 @@
+import AppContext from '@/context/AppContext';
+import { useContext } from 'react';
+
 const SearchBtn: React.FC = () => {
+  const { onOpen } = useContext(AppContext);
+
   return (
     <div className='flex h-full items-center'>
       <button
         className='header-link flex justify-between items-center w-[70px] h-10 py-[10px] font-bold'
         type='button'
+        onClick={() => onOpen()}
       >
         <span className='w-4 h-4'>
           <svg
