@@ -15,7 +15,7 @@ import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
 
 const MobileFooter = () => {
   const router = useRouter();
-  const prevRoute = useContext(AppContext);
+  const { prevRoute, onOpen } = useContext(AppContext);
   const [currentActiveTab, setCurrentActiveTab] = useState<string>(router.pathname);
 
   const handleClick = (tab: string) => {
@@ -30,8 +30,12 @@ const MobileFooter = () => {
     }
   };
 
+  const handleSearchClick = () => {
+    onOpen();
+  };
+
   return (
-    <footer className='fixed bottom-0 left-0 right-0 z-50'>
+    <footer className='fixed bottom-0 left-0 right-0 z-[50]'>
       <div className='mobile-footer h-12 text-white'>
         <Link className='footer-tab-item' href='/' onClick={() => handleClick('/')}>
           <FooterTab isActive={currentActiveTab === '/'}>
@@ -47,7 +51,7 @@ const MobileFooter = () => {
           </FooterTab>
         </Link>
 
-        <div className='footer-tab-item' onClick={() => handleClick('search')}>
+        <div className='footer-tab-item' onClick={handleSearchClick}>
           <FooterTab isActive={currentActiveTab === 'search'}>
             <MagnifyingGlassIcon className='w-[20px] h-[20px] stroke-[3]' />
             <span className='mt-[4px]'>Поиск</span>
