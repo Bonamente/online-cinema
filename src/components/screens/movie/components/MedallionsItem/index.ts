@@ -1,0 +1,1 @@
+export { MedallionsItem } from './MedallionsItem';

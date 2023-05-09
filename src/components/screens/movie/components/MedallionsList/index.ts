@@ -1,0 +1,1 @@
+export { MedallionsList } from './MedallionsList';
