@@ -1,11 +1,11 @@
-export function getSliderBreakpoints(slidesPerView: number | "auto"): {
+export function getSliderBreakpoints(slidesPerView: number | 'auto'): {
   [key: number]: {
     slidesPerView: number;
     slidesPerGroup: number;
     spaceBetween?: number;
   };
 } {
-  if (slidesPerView === "auto") return {};
+  if (slidesPerView === 'auto') return {};
   if (slidesPerView === 7)
     return {
       1: {

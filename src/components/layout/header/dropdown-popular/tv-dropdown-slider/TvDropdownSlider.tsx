@@ -10,7 +10,7 @@ const TvDropdownSlider: React.FC<TvDropdownSliderProps> = ({
 }) => {
   return (
     <div className='group/slider'>
-      <h3 className='mb-4 text-[15px] font-bold'>{title}</h3>
+      <h3 className='mb-4 text-[15px] text-white font-bold'>{title}</h3>
 
       <div className='relative'>
         <CustomSlider

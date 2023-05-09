@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import { useMediaQuery } from 'react-responsive';
 import Meta, { MetaProps } from '../seo/Meta';
+import SearchModal from './search-modal/SearchModal';
 
 const DynamicHeader = dynamic(() => import('./header/Header'), {
   ssr: false,
@@ -25,6 +26,7 @@ const Layout: React.FC<MetaProps> = ({ title, description, children }) => {
         <DynamicHeader />
         <main>{children}</main>
         {isLargeScreen ? <DynamicFooter /> : <DynamicMobileFooter />}
+        <SearchModal />
       </div>
     </Meta>
   );

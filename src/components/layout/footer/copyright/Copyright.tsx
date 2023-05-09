@@ -14,28 +14,6 @@ const Copyright = () => {
             bonamente
           </a>
         </span>
-        ,{' '}
-        <span>
-          <a
-            className='header-link'
-            href='https://github.com/kimutir'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            kimutir
-          </a>
-        </span>
-        ,{' '}
-        <span>
-          <a
-            className='header-link'
-            href='https://github.com/mitteos'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            mitteos
-          </a>
-        </span>
       </p>
     </div>
   );

@@ -15,13 +15,13 @@ const FooterButton: React.FC<FooterButtonProps> = ({
 
   switch (size) {
     case 'small':
-      sizeStyle = `w-10 h-10`;
+      sizeStyle = 'w-10 h-10';
       break;
     case 'middle':
-      sizeStyle = `w-full h-10 py-[9px] px-[15px] leading-[18px]`;
+      sizeStyle = 'w-full h-10 py-[9px] px-[15px] leading-[18px]';
       break;
     case 'large':
-      sizeStyle = `justify-start h-12 w-full leading-5`;
+      sizeStyle = 'justify-start h-12 w-full leading-5';
       break;
     default:
       sizeStyle = '';

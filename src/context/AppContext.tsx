@@ -1,5 +1,17 @@
 import { createContext } from 'react';
 
-const AppContext = createContext<string | null>(null);
+type AppContextData = {
+  prevRoute: string | null;
+  isSearchModalOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+};
+
+const AppContext = createContext<AppContextData>({
+  prevRoute: null,
+  isSearchModalOpen: false,
+  onOpen: () => {},
+  onClose: () => {},
+});
 
 export default AppContext;

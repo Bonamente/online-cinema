@@ -14,6 +14,7 @@ const DropdownMainContent: React.FC<DropdownMainContentProps> = ({
   mobileLinkURL,
 }) => {
   const isTabletScreen = useMediaQuery({ query: '(max-width: 880px)' });
+  const isMobileScreen = useMediaQuery({ query: '(max-width: 470px)' });
 
   return (
     <>
@@ -30,14 +31,14 @@ const DropdownMainContent: React.FC<DropdownMainContentProps> = ({
           )}
 
           <div className='flex'>
-            <div className='w-64 mt-6 mr-6'>
+            <div className={`${isMobileScreen ? 'mt-6 mr-4' : 'w-64 mt-6 mr-6'}`}>
               <h3 className='link-list-title'>Жанры</h3>
               <div className=''>
                 <LinksList direction='column' links={genresLinks} />
               </div>
             </div>
             <div className={`flex ${isTabletScreen ? 'flex-col' : ''}`}>
-              <div className='w-64 mt-6 mr-6'>
+              <div className={`${isMobileScreen ? 'mt-6' : 'w-64 mt-6 mr-6'}`}>
                 <div>
                   <h3 className='link-list-title'>Страны</h3>
                   <LinksList direction='column' links={contriesLinks} />
@@ -49,10 +50,8 @@ const DropdownMainContent: React.FC<DropdownMainContentProps> = ({
                 </div>
               </div>
               <div
-                className={`w-64 pt-6 mr-6 ${
-                  isTabletScreen
-                    ? 'border-t border-white/[.16]'
-                    : 'border-t border-transparent'
+                className={`${isMobileScreen ? 'mt-6 pt-6' : 'w-64 pt-6 mr-6'}  ${
+                  isTabletScreen ? 'border-t border-white/[.16]' : 'border-t border-transparent'
                 }`}
               >
                 <LinksList direction='column' links={newLinks} />
